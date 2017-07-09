@@ -1,18 +1,25 @@
 angular.module('snietApp', ['ngRoute','ngStorage']);
 
 
-angular.module('snietApp').run(function ($rootScope, $location, tokenService, $localStorage,
- userService) {
+angular.module('snietApp').run(function ($rootScope, $location, $localStorage,
+ userService, tokenService, menuService) {
 	
     $rootScope.$on('$routeChangeStart', function (event, next, current) {
 		
 		console.log("Pagina requisitada: " + next.templateUrl);
 		console.log("Necessita estar logado: " + (next.authorize?'sim':'não'));
 		console.log("Nivel de acesso exigido: " + next.level);
-		if(userService.getUserLoged())
+
+		if(userService.getUserLoged()){
 			console.log("Seu nivel de acesso: " + userService.getUserLoged().acessLevel);
-		else
+			console.log("Menu habilitado.");
+		}
+		else{
 			console.log("Você não está logado!");
+			console.log("Menu desabilitado.");
+		}
+
+		menuService.showMenu();
 
 		if (next.authorize) {
 			
@@ -31,6 +38,7 @@ angular.module('snietApp').run(function ($rootScope, $location, tokenService, $l
 				})
 			}
 		}
+		
 		console.log("--------------------------------------");
 	});
 });

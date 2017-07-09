@@ -1,4 +1,5 @@
-angular.module('snietApp').controller('menuCtrl', function($scope, $interval, $http, loginService){
+angular.module('snietApp').controller('menuCtrl', function($scope, $interval, $http, 
+menuService){
 	
     $scope.novoUsuario = 0;
 	$scope.novoIncidente = 357;
@@ -14,8 +15,11 @@ angular.module('snietApp').controller('menuCtrl', function($scope, $interval, $h
 
 		$interval(atualizaNotificacaoNovoUsuario, 10000);
 	},
+
 	$scope.logout = function(){
-		console.log('logout!');
-		loginService.logout();
+		menuService.logout();
 	}
+
+	menuService.showMenu();
+
 });

@@ -23,7 +23,14 @@
     
     <script src="js/app.js"></script>
 
-    <script src="js/interceptors/httpRequestInterceptor.js"></script>    
+    <script src="js/interceptors/httpRequestInterceptor.js"></script> 
+
+    <script src="js/directives/menuDirective.js"></script>   
+
+    <script src="js/services/tokenService.js"></script>
+    <script src="js/services/userService.js"></script>
+    <script src="js/services/loginService.js"></script>
+    <script src="js/services/menuService.js"></script>    
     
     <script src="js/controllers/cadastroIncidentesCtrl.js"></script>
     <script src="js/controllers/cadastroUsuariosCtrl.js"></script>
@@ -38,22 +45,22 @@
     <script src="js/controllers/menuCtrl.js"></script>
     <script src="js/controllers/registrarCtrl.js"></script>
     <script src="js/controllers/sobreCtrl.js"></script>
-    
-    <script src="js/services/tokenService.js"></script>
-    <script src="js/services/userService.js"></script>
-    <script src="js/services/loginService.js"></script>
 
     <script src="js/routes/routes.js"></script>
     
   
 </head>
-<body class="background">
+<body class="background" menu-directive>
 <div class="container">
     <div class="row middle">
         
             <div class="white card-panel box">
-                    <div ng-if="location.path() !== '/login' && location.path() !== '/registrar' && location.path() !== '/'"
-                     ng-include="'view/templates/barra-menu-materialize.html'"></div>	
+                    <div id="menu-bar"
+                     ng-include="'view/templates/barra-menu-materialize.html'">
+                        <script>
+                            console.log('XABLAU!' + location);
+                        </script>
+                    </div>	
                     <div ng-view=""></div>
             </div>
     </div>

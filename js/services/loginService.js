@@ -30,6 +30,12 @@ tokenService, userService){
 			tokenService.deleteToken();
 			userService.removeUserLoged();
 			$location.path('/login');
+		},
+		isLoged: function () {
+			if(!userService.getUserLoged())
+				return false
+			return true;
 		}
+
 	}
 });
