@@ -24,7 +24,7 @@ angular.module('snietApp').controller('consultaIncidentesCtrl', function($scope,
 
 	$scope.listarIncidentes = function(){
 
-		$http.get('http://localhost:8282/sniet_api/servlet/incidentes/full').then(function(response){
+		$http.get('http://localhost:8282/sniet_api/servlet/incidents/').then(function(response){
 			$scope.incidentes = response.data;
 			console.log($scope.incidentes);
 		})
@@ -37,13 +37,13 @@ angular.module('snietApp').controller('consultaIncidentesCtrl', function($scope,
 
 	$scope.listarIndividuos = function(){
 
-		$http.get('http://localhost:8282/sniet_api/servlet/incidentes/full').then(function(response){
+		$http.get('http://localhost:8282/sniet_api/servlet/incidents/all').then(function(response){
 			$scope.individuos = response.data;
 			//console.log($scope.individuos);
 		})
-		.catch(function(){
+		.catch(function(e){
 			console.log("Error!")
-			//console.log(e);
+			console.log(e);
 		});
 	}
 
@@ -103,7 +103,7 @@ angular.module('snietApp').controller('consultaIncidentesCtrl', function($scope,
 			headers : {'Content-Type' : 'application/json; charset=UTF-8'}
 		};
 
-		$http.put("http://localhost:8282/sniet_api/servlet/incidentes/", incidenteEdit, header).then(function(response){
+		$http.put("http://localhost:8282/sniet_api/servlet/incidents/", incidenteEdit, header).then(function(response){
 			$scope.limparCampos();
 			//$scope.listarIndividuos();
 		});
