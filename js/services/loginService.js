@@ -1,8 +1,6 @@
 angular.module('snietApp').factory('loginService',function($http, $location,
 tokenService, userService){
 
-	console.log('loginService');
-
 	return{
 
 		login: function(data, header) {
@@ -10,7 +8,7 @@ tokenService, userService){
 			$http.post('http://localhost:8282/sniet_api/servlet/usuarios/login',
 			data, header).then(function(response){
 
-				console.log('Token: '+ response.headers('authorization'));
+				//console.log('Token: '+ response.headers('authorization'));
 
 				tokenService.setToken(response.headers('authorization'));
 				userService.setUserLoged(response.data);
@@ -36,6 +34,5 @@ tokenService, userService){
 				return false
 			return true;
 		}
-
 	}
 });

@@ -5,7 +5,7 @@ angular.module('snietApp').controller('loginCtrl', function($scope, loginService
 	headers : {'Content-Type' : 'application/json; charset=UTF-8'}};
 
 	$scope.logar = function(loginUser){
-		console.log('logar!')
+		console.log('logando...')
 		var data = angular.copy(loginUser);
 		delete $scope.loginUser;
 		loginService.login(data,header);

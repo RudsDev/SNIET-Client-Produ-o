@@ -35,7 +35,7 @@ angular.module('snietApp').controller('cadastroIncidenteCtrl', function($scope, 
 	 		headers : {'Content-Type' : 'application/json;'}
 	   	};
 	   
-	   $http.post("http://localhost:8282/sniet_api/servlet/incidentes/",
+	   $http.post("http://localhost:8282/sniet_api/servlet/incidents/",
 	   		 incidenteWrapper, header).then(function(response){
 			 $scope.limparCampos();
 	   });
@@ -76,7 +76,7 @@ angular.module('snietApp').controller('cadastroIncidenteCtrl', function($scope, 
 	 		headers : {'Content-Type' : 'application/json;'}
 	   	};
 	   
-	   $http.post("http://localhost:8282/sniet_api/servlet/incidentes/",
+	   $http.post("http://localhost:8282/sniet_api/servlet/incidents/",
 	   		 incidenteWrapper, header).then(function(response){
 			 $scope.limparCampos();
 	   });
