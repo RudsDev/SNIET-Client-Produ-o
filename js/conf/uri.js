@@ -1,16 +1,16 @@
-window.conf.aws = {
+aws = {
     base : 'http://52.14.130.196/apirestex'
 }
 
-window.conf.tomcat = {
+tomcat = {
     base : 'http://localhost:8282/sniet_api'
 }
 
-window.conf.xampp = {
+xampp = {
     base : 'http://localhost/',
     base_81 : 'http://localhost:81/sniet_api'
 }
 
-window.conf.absolut = {
+absolut = {
     base : 'sniet_api/'
 }

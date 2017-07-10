@@ -1,6 +1,6 @@
 angular.module('snietApp').controller('consultaIncidentesCtrl', function($scope, $http){
     
-	let base = window.conf.tomcat.base;
+	let base = tomcat.base;
 
 	$scope.msg ='consultaIncidentesCtrl';
 	$scope.incidentes= [];
