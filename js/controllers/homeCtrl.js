@@ -1,3 +1,3 @@
-angular.module('snietApp').controller('homeCtrl', function(menuService){
+angular.module('snietApp').controller('homeCtrl', function(){
 	
 });
