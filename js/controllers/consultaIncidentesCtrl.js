@@ -5,16 +5,12 @@ angular.module('snietApp').controller('consultaIncidentesCtrl', function($scope,
 	$scope.individuos= null;
 
 	$scope.pontos = function(){
-		console.log('pontos!');
-		var map = `<iframe src='${path.base}/map/maps.html' width='90%' height='300px' style='position: relative; left: 5%; top: -10px'></iframe>`;
-
+		var map = `<iframe src='${path.base}/map/maps.html' class="show-maps"></iframe>`;
 		$('#mapa').empty().append(map);
 	}
 
 	$scope.ponto = function(id){
-		console.log('ponto!!!');
-		var map = `<iframe src='${path.base}/map/map_one.html?individuoID="${id}"' width='90%' height='300px' style='position: relative; left: 5%; top: -10px'></iframe>`;
-
+		var map = `<iframe src='${path.base}/map/map_one.html?individuoID=${id}' class="show-maps" ></iframe>`;
 		$('#mapa').empty().append(map);
 	}
 

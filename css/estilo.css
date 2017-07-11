@@ -55,6 +55,15 @@ input:required:invalid {
   box-sizing: content-box;
   transition: all 0.3s;
 }
-input:required:valid {
 
+/*input:required:valid {
+
+}*/
+
+.show-maps{
+    width: 90%;
+    height:300px;
+    position: relative;
+    left: 5%;
+    top: -10px'
 }
