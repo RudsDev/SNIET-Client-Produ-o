@@ -13,7 +13,7 @@ angular.module('snietApp').controller('consultaIncidentesCtrl', function($scope,
 
 	$scope.ponto = function(id){
 		console.log('ponto!!!');
-		var map = `<iframe src='${path.base}/map/map_one.html?individuoID="+id+"' width='90%' height='300px' style='position: relative; left: 5%; top: -10px'></iframe>`;
+		var map = `<iframe src='${path.base}/map/map_one.html?individuoID="${id}"' width='90%' height='300px' style='position: relative; left: 5%; top: -10px'></iframe>`;
 
 		$('#mapa').empty().append(map);
 	}
