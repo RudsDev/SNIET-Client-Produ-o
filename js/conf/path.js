@@ -1,4 +1,7 @@
 
+/*Os paths utilizados pela aplicação estão centralizados nesse arquivo.
+ Para alterar o caminho padrão basta alterar o valor recebido por 'path.base'. */
+
 path = {
 
     base = '',
@@ -21,4 +24,5 @@ path = {
     }
 }
 
+//Altera o path padrão da aplicação.
 path.base = path.tomcat;
