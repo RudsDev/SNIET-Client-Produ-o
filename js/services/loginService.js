@@ -5,7 +5,7 @@ tokenService, userService){
 
 		login: function(data, header) {
 
-			$http.post('http://localhost:8282/sniet_api/servlet/usuarios/login',
+			$http.post(`${path.base}/servlet/usuarios/login`,
 			data, header).then(function(response){
 
 				//console.log('Token: '+ response.headers('authorization'));

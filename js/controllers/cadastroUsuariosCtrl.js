@@ -21,7 +21,6 @@ angular.module('snietApp').controller('cadastroUsuarioCtrl', function($scope, $h
 	$scope.instituicaoTipo = '';
 	$scope.instituicaoRegistro = '';
 
-
 	$scope.enderecoPais = '';
 	$scope.enderecoUF = '';
 	$scope.enderecoBairro = '';
@@ -63,7 +62,7 @@ angular.module('snietApp').controller('cadastroUsuarioCtrl', function($scope, $h
 			headers : {'Content-Type' : 'application/json; charset=UTF-8'}
 		};
 
-			$http.post("http://localhost:8282/sniet_api/servlet/usuarios", user, header).then(function(response){
+			$http.post(`${path.base}/servlet/usuarios`, user, header).then(function(response){
 
 					$scope.limparCampos();	
 					var $toastContent = $("<span>"+msgtoast+" salvo com sucesso!</span>");
@@ -105,7 +104,7 @@ angular.module('snietApp').controller('cadastroUsuarioCtrl', function($scope, $h
 	 		headers : {'Content-Type' : 'application/x-www-form-urlencoded; charset=UTF-8'}
 	   	};
 	   
-	   $http.post("http://www.phpemacao.96.lt/api/updateUsuario.php", u).then(function(response){
+	   $http.post(`${path.base}/`, u).then(function(response){
             $scope.limparCampos();
 	   });
     }
@@ -160,7 +159,7 @@ angular.module('snietApp').controller('cadastroUsuarioCtrl', function($scope, $h
 	 		headers : {'Content-Type' : 'application/json; charset=UTF-8'}
 	   	};
 	   
-	   $http.post("http://www.phpemacao.96.lt/api/deleteUsuario.php", del, header).then(function(response){
+	   $http.post(`${path.base}/`, del, header).then(function(response){
 			
 	   });
     }

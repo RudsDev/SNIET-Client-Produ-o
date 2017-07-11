@@ -1,7 +1,7 @@
 angular.module('snietApp').controller('consultaUsuarioCtrl', function($scope, $http){
 
 	$scope.listarUsuarios = function(){
-        $http.get('http://localhost:8282/sniet_api/servlet/usuarios').then(function(response){
+        $http.get(`${path.base}/servlet/usuarios`).then(function(response){
 
 			$scope.usuarios = response.data;
 
@@ -32,7 +32,7 @@ angular.module('snietApp').controller('consultaUsuarioCtrl', function($scope, $h
 				headers : {'Content-Type' : 'application/json; charset=UTF-8'}
 			};
 
-			$http.put("http://localhost:8282/sniet_api/servlet/incidentes/full", usuarioEdit, header).then(function(response){
+			$http.put(`${path.base}/servlet/incidentes/full`, usuarioEdit, header).then(function(response){
 
 						$scope.limparUsuarios();
 

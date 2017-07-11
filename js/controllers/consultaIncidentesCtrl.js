@@ -1,28 +1,26 @@
 angular.module('snietApp').controller('consultaIncidentesCtrl', function($scope, $http){
     
-	let base = tomcat.base;
-
 	$scope.msg ='consultaIncidentesCtrl';
 	$scope.incidentes= [];
 	$scope.individuos= null;
 
 	$scope.pontos = function(){
 		console.log('pontos!');
-		var map = `<iframe src='${base}/map/maps.html' width='90%' height='300px' style='position: relative; left: 5%; top: -10px'></iframe>`;
+		var map = `<iframe src='${path.base}/map/maps.html' width='90%' height='300px' style='position: relative; left: 5%; top: -10px'></iframe>`;
 
 		$('#mapa').empty().append(map);
 	}
 
 	$scope.ponto = function(id){
 		console.log('ponto!!!');
-		var map = `<iframe src='${base}/map/map_one.html?individuoID="+id+"' width='90%' height='300px' style='position: relative; left: 5%; top: -10px'></iframe>`;
+		var map = `<iframe src='${path.base}/map/map_one.html?individuoID="+id+"' width='90%' height='300px' style='position: relative; left: 5%; top: -10px'></iframe>`;
 
 		$('#mapa').empty().append(map);
 	}
 
 	$scope.listarIncidentes = function(){
 
-		$http.get(`${base}/servlet/incidents/`).then(function(response){
+		$http.get(`${path.base}/servlet/incidents/`).then(function(response){
 			$scope.incidentes = response.data;
 			console.log($scope.incidentes);
 		})
@@ -35,7 +33,7 @@ angular.module('snietApp').controller('consultaIncidentesCtrl', function($scope,
 
 	$scope.listarIndividuos = function(){
 
-		$http.get(`${base}/servlet/incidents/all`).then(function(response){
+		$http.get(`${path.base}/servlet/incidents/all`).then(function(response){
 			$scope.individuos = response.data;
 			//console.log($scope.individuos);
 		})
@@ -101,7 +99,7 @@ angular.module('snietApp').controller('consultaIncidentesCtrl', function($scope,
 			headers : {'Content-Type' : 'application/json; charset=UTF-8'}
 		};
 
-		$http.put("http://localhost:8282/sniet_api/servlet/incidents/", incidenteEdit, header).then(function(response){
+		$http.put(`${path.base}/sniet_api/servlet/incidents/`, incidenteEdit, header).then(function(response){
 			$scope.limparCampos();
 			//$scope.listarIndividuos();
 		});
