@@ -1,7 +1,9 @@
 angular.module('snietApp').config(function ($routeProvider, $locationProvider,
  $httpProvider) {
 
-	$httpProvider.interceptors.push('httpRequestInterceptor');
+    $httpProvider.interceptors.push('httpRequestInterceptor');
+    
+    //$locationProvider.hashPrefix('!').html5Mode(true);
 
     $locationProvider.hashPrefix('');	
 
