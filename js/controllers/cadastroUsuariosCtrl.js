@@ -62,7 +62,7 @@ angular.module('snietApp').controller('cadastroUsuarioCtrl', function($scope, $h
 			headers : {'Content-Type' : 'application/json; charset=UTF-8'}
 		};
 
-			$http.post(`${path.base}/servlet/usuarios`, user, header).then(function(response){
+			$http.post(`${path.base}/usuarios`, user, header).then(function(response){
 
 					$scope.limparCampos();	
 					var $toastContent = $("<span>"+msgtoast+" salvo com sucesso!</span>");

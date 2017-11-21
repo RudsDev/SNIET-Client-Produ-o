@@ -15,7 +15,7 @@ path = {
     },
 
     tomcat :{
-        base : 'http://localhost:8282/sniet_api'
+        port_8282 : 'http://localhost:8282'
     },
 
     xampp : {
@@ -23,11 +23,16 @@ path = {
         base_81 : 'http://localhost:81/sniet_api'
     },
 
+    map : {
+        base : '/sniet/map',
+    },
+
     absolut : {
-        base_sniet : '/sniet_api',
+        base_sniet : '/sniet/app',
         base_gondor : '/apirestex'
     }
 }
 
 //Altera o path padrão da aplicação.
-path.base = path.absolut.base_sniet;
+path.base = path.tomcat.port_8282+path.absolut.base_sniet;
+path.mapa = path.tomcat.port_8282+path.map.base;

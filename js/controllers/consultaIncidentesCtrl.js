@@ -5,18 +5,18 @@ angular.module('snietApp').controller('consultaIncidentesCtrl', function($scope,
 	$scope.individuos= null;
 
 	$scope.pontos = function(){
-		var map = `<iframe src='${path.base}/map/maps.html' class="show-maps"></iframe>`;
+		var map = `<iframe src='${path.mapa}/maps.html' class="show-maps"></iframe>`;
 		$('#mapa').empty().append(map);
 	}
 
 	$scope.ponto = function(id){
-		var map = `<iframe src='${path.base}/map/map_one.html?individuoID=${id}' class="show-maps" ></iframe>`;
+		var map = `<iframe src='${path.mapa}/map_one.html?individuoID=${id}' class="show-maps" ></iframe>`;
 		$('#mapa').empty().append(map);
 	}
 
 	$scope.listarIncidentes = function(){
 
-		$http.get(`${path.base}/servlet/incidents/`).then(function(response){
+		$http.get(`${path.base}/incidents/`).then(function(response){
 			$scope.incidentes = response.data;
 			console.log($scope.incidentes);
 		})
@@ -29,7 +29,7 @@ angular.module('snietApp').controller('consultaIncidentesCtrl', function($scope,
 
 	$scope.listarIndividuos = function(){
 
-		$http.get(`${path.base}/servlet/incidents/all`).then(function(response){
+		$http.get(`${path.base}/incidents/all`).then(function(response){
 			$scope.individuos = response.data;
 			//console.log($scope.individuos);
 		})
@@ -95,7 +95,7 @@ angular.module('snietApp').controller('consultaIncidentesCtrl', function($scope,
 			headers : {'Content-Type' : 'application/json; charset=UTF-8'}
 		};
 
-		$http.put(`${path.base}/sniet_api/servlet/incidents/`, incidenteEdit, header).then(function(response){
+		$http.put(`${path.base}/incidents/`, incidenteEdit, header).then(function(response){
 			$scope.limparCampos();
 			//$scope.listarIndividuos();
 		});

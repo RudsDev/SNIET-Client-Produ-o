@@ -5,7 +5,7 @@ menuService){
 	$scope.novoIncidente = 357;
 
 	$scope.atualizaNotificacaoNovoUsuario = function($scope, $http){
-		 $http.get(`${path.base}/servlet/usuarios`)
+		 $http.get(`${path.base}/usuarios`)
 		 .then(function(response){
 			$scope.novoUsuario = response.data.length;
 		})

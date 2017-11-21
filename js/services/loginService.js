@@ -5,7 +5,7 @@ tokenService, userService){
 
 		login: function(data, header) {
 
-			$http.post(`${path.base}/servlet/usuarios/login`,
+			$http.post(`${path.base}/usuarios/login`,
 			data, header).then(function(response){
 
 				//console.log('Token: '+ response.headers('authorization'));
